@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply as a veteran</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <style>
+        
+        div#container{
+            background-color: bisque;
+            border: 0.1em solid ;
+            margin: 0em;
+            padding: 0em;
+        }
+        #i1,.links{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(34, 223, 53);
+            font-size: 50px;
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: black;
+        }
+        .inp{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+            margin: 0px;
+            padding: 10px;
+        }
+
+        .inp1{
+            margin-left:100px;
+            padding:2px;
+            height:25px;
+        }
+        
+        #add{
+            height: 7em;
+            size: 25em;
+        }  
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button:hover {background-color: #256527;}
+        div#content {
+           background-color: url("img2.jpg"); 
+           padding-left: 7em;
+        }
+        textarea{
+            resize: none;
+        }
+        #f1{
+            background-color: bisque;
+            border: none;
+            color: white;
+            padding: 5px 10px ;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        var i;
+        var name;
+        var details;
+        var age;
+        var qualification;
+        var email;
+        var gender;
+        var details1;
+        var ans1;
+        var ans2;
+        var number;
+        var address;
+
+        function linker(){
+            details = document.querySelectorAll("input");
+            name = details[0];
+            age = details[1];
+            qualification = details[2];
+            number = details[3];
+            email = details[4];
+            gender = document.getElementById("n1").value;
+            details1 = document.querySelectorAll("textarea");
+            address = details1[0];
+            ans1 = details1[1];
+            ans2 = details1[2];
+
+            document.getElementById("f1").addEventListener('change', function(){   
+            var fr=new FileReader();
+            fr.onload=function(){
+                document.getElementById('output')
+                        .textContent=fr.result;
+            }
+            fr.readAsText(this.files[0]);
+        })
+        }
+
+        function sendEmail() {
+            Email.send({
+            Host: "smtp.gmail.com",
+            Username: "yvvivek8@gmail.com",
+            Password: "Shadow@090703",
+            To: 'yvvivek9@gmail.com',
+            From: "yvvivek8@gmail.com",
+            Subject: "Details of the Voluteer Veteran",
+            Body: "Name : "+ name +"<br>" + "Age : "+age+"<br>" + "Gender : " +gender +"<br>" + "Qualification : "+qualification+"<br>" + "Address : "+"<br>"+address + "Contact-Number : "+number+"<br>" + "Answer-1 :"+ans1+"<br>" + "Answer-2 : "+ans2+"<br>" ,
+      })
+        .then(function (message) {
+          alert("mail sent successfully")
+        });
+    }
+    </script>
+</head>
+<body background="background4.png">
+    <svg id="header" width="100%" height="120px" style="background-color: grey; margin:0px; padding:0px;">
+    <image href="https://loveforforgotten.org/wp-content/uploads/2021/08/cropped-loveforforgotten-valueeverylife-logo.png"
+    x="175px" y="13px" />
+    <a href="https://loveforforgotten.org/about/">
+    <text class="header_fonts" x="600px" y="45px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">ABOUT</text></a>
+    <a href="https://loveforforgotten.org/updates/">
+    <text class="header_fonts" x="690px" y="45px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">UPDATES</text></a>
+    <a href="https://loveforforgotten.org/videos/">
+    <text class="header_fonts" x="800px" y="45px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">VIDEOS</text></a>
+    <a href="https://loveforforgotten.org/donate/">
+    <text class="header_fonts" x="900px" y="45px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">DONATE</text></a>
+    <a href="https://loveforforgotten.org/adopt/">
+    <text class="header_fonts" x="1000px" y="45px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">ADOPT</text></a>
+    <a href="https://loveforforgotten.org/pet-boarding/">
+    <text class="header_fonts" x="1100px" y="45px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">PET BOARDING</text></a>
+    <text class="header_fonts" x="600px" y="87px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">HOW TO HELP</text>
+    <a href="https://loveforforgotten.org/contact/">
+    <text class="header_fonts" x="750px" y="87px" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size:medium;">CONTACT</text></a>
+    </svg><br>
+    <div id="content" >
+    <br><br>
+    <h1 id="i1">Apply As a Volunteer Veteran:</h1><br><br><br>
+    <h3 class="inp">Name of the Veteran :</h3>
+    <input class="inp1" type="text" size="50px">
+    <br><br>
+    <h3 class="inp" style="margin-left:40px">Age :</h3>
+    <input class="inp1" type="number" size="10px" style="height:25px">
+    <br><br>
+    <h3 class="inp">Gender :</h3>
+    <input class="inp1" type="radio" name="n1" id="n1"><span style="font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px; margin-left:10px">Male</span>
+    <input class="inp1" type="radio" name="n1" id="n1"><span style="font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px; margin-left:10px">Female</span>
+    <br><br>
+    <h3 class="inp">Qualification :</h3>
+    <input class="inp1" type="text" size="70px">
+    <br><br>
+    <h3 class="inp">Clinic Address :</h3>
+    <textarea rows="10" cols="50" style="margin-left:100px; padding:2px"></textarea>
+    <br><br>
+    <h3 class="inp">Contact Number :</h3>
+    <input class="inp1" type="number" width="10px" style="height:25px">
+    <br><br>
+    <h3 class="inp">E-Mail :</h3>
+    <input class="inp1" type="text" size="35px">
+    <br><br>
+    <h3 class="inp">Graduation Certificates :</h3>
+    <input class="inp1" type="file" id="f1" required style="background:none">
+    <br><br>
+    <h3 class="inp">Where did you hear about LFF and why did you choose to volunteer 
+        specifically with this organization?</h3>
+    <textarea rows="5" cols="100" style="margin-left:100px; padding:2px"></textarea>
+    <br><br>
+    <h3 class="inp">Have you worked as a volunteer before? If yes, what did you do, when, and with which organization</h3>
+    <textarea rows="5" cols="100" style="margin-left:100px; padding:2px"></textarea>
+    <br></div>
+    <h3 style="margin-left:30px; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;"><span style="color: red;">Declaration:</span> On being approved and accepted as a volunteer at LFF, I accept and will abide by the Policies and Regulations of the Organisation. I will at no point, go against the Organisation, singly or in concert with others at any time intended to deliberately bring down the efficiency & reputation of the Organisation, in public or otherwise. <span style="color: red;">*</span></h3>
+    <input type="checkbox" required style="margin-left:300px; height:20px; width:20px" ><span style="font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px; margin-left:10px">Accept</span>
+    
+    <br><input type="submit" size="20px" class="button" onclick="linker" style="margin-left:350px; margin-top:20px">
+</body>
+</html>
